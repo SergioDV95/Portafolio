@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+   html {}
+}
+
+@layer components {
+   .btn {
+      @apply bg-sky-500 text-white rounded-md px-4 py-2;
+   }
+}
+
+@layer utilities {
+   .text-shadow {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+   }
+}
+
+@font-face {
+   font-family: 'Awesome';
+   src: url('assets/Fonts/Font-Awesome-5-Free-Solid-900.otf') format('opentype');
+}
+@font-face {
+   font-family: 'Hanson';
+   src: url('assets/Fonts/Hanson-Bold.ttf') format('truetype');
+}
+@font-face {
+   font-family: 'Neulis';
+   src: url('assets/Fonts/Neulis-Medium.otf') format('opentype');
+}
+
