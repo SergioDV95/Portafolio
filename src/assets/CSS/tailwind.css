@@ -20,14 +20,13 @@
 
 @font-face {
    font-family: 'Awesome';
-   src: url('assets/Fonts/Font-Awesome-5-Free-Solid-900.otf') format('opentype');
+   src: url('../Fonts/Font-Awesome-5-Free-Solid-900.woff2') format('woff2');
 }
 @font-face {
    font-family: 'Hanson';
-   src: url('assets/Fonts/Hanson-Bold.ttf') format('truetype');
+   src: url('../Fonts/Hanson-Bold.woff2') format('woff2');
 }
 @font-face {
    font-family: 'Neulis';
-   src: url('assets/Fonts/Neulis-Medium.otf') format('opentype');
+   src: url('../Fonts/Neulis-Medium.woff2') format('woff2');
 }
-
