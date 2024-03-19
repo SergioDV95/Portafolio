@@ -1,13 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
 	darkMode: 'selector',
-	content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
+	content: [ "./index.html" ,"./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		extend: {
 			fontFamily: {
-				'hanson': ['Hanson', 'sans-serif'],
-				'neulis': ['Neulis', 'sans-serif'],
-				'awesome': ['Awesome', 'sans-serif'],
+				open: ["Open Sans", "sans-serif"],
+				dela: ["Dela Gothic One", "sans-serif"],  
 			},
 		},
 	},
