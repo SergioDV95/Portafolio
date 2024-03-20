@@ -13,15 +13,19 @@
    }
 }
 
-@layer components {}
+@layer components {
+   img {
+      position: absolute;
+      z-index: -1;
+   }
+}
 
 @layer utilities {
-   main {
-      background-image: url("../png/Recurso_17.png");
-      background-size: 1182px 676px;
+   .bg-image {
+      background-image: url('./src/assets/png/Recurso_17.png#xywh=500,500,500,500');
+      background-size: 100% 100%;
       background-repeat: no-repeat;
       transform: rotate(-25.99deg);
       background-position: center;
-      height: 100vh;
    }
 }
