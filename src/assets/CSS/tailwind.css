@@ -3,13 +3,16 @@
 @tailwind utilities;
 
 @layer base {
-   .light_mode {
-      background-image: url("../png/fondo_light.png");
-      background-size: cover;
-   }
+   .light_mode {}
    .dark_mode {
-      background-image: url("../png/fondo_dark.png");
-      background-size: cover;
+      background:
+         radial-gradient(circle closest-corner at 30% 5%, #003065, #000314),
+         radial-gradient(circle closest-corner at 80% 40%, #003065, #000314);
+      background-color: #000000;
+      background-repeat: no-repeat;
+   }
+   body {
+      @apply h-[5833.33px]
    }
 }
 
@@ -22,8 +25,10 @@
 
 @layer utilities {
    .bg-image {
-      background-image: url('./src/assets/png/Recurso_17.png#xywh=500,500,500,500');
+      background-image: url('../png/Recurso_17.png#xywh=500,500,500,500');
       background-size: 100% 100%;
+      width: 500px;
+      height: 500px;
       background-repeat: no-repeat;
       transform: rotate(-25.99deg);
       background-position: center;
