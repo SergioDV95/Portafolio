@@ -13,13 +13,14 @@ export default {
 				navbutton: "linear-gradient(to right, #41BD7526, #41BD7580)",
 			},
 			animation: {
-				navbar: "navbar 2s forwards",
+				navbarOpen: "navbar 1s forwards",
+				navbarClose: "navbar 1s reverse forwards",
 			},
 			keyframes: {
 				navbar: {
 					from: {
-						"width": "fit-content",
-						"height": "fit-content",
+						"width": "63px",
+						"height": "63px",
 						"align-items": "center",
 						"border-radius": "100%",
 						
