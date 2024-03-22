@@ -13,23 +13,20 @@ export default {
 				navbutton: "linear-gradient(to right, #41BD7526, #41BD7580)",
 			},
 			animation: {
-				navbarOpen: "navbar 1s forwards",
-				navbarClose: "navbar 1s reverse forwards",
+				openNavbar: "navbar 1s forwards",
+				closeNavbar: "navbar 1s reverse forwards",
 			},
 			keyframes: {
 				navbar: {
 					from: {
 						"width": "63px",
 						"height": "63px",
-						"align-items": "center",
 						"border-radius": "100%",
-						
 					},
 					to: {
 						"width": "50%",
 						"height": "50vh",
-						"align-items": "normal",
-						"border-radius": "0px 100% 100% 0px",
+						"border-radius": "0px 25px 25px 0px",
 					},
 				}
 			}
