@@ -9,8 +9,13 @@ export default {
 				dela: ["Dela Gothic One", "sans-serif"],  
 			},
 			backgroundImage: {
-				navbar: "linear-gradient(to bottom, #FFFFFF26, #FFFFFF80)",
+				navbarDesktop: "linear-gradient(to bottom, #FFFFFF26, #FFFFFF80)",
+				navbarMobile: "linear-gradient(to right, #42506B 40%, #42506BE6)",
 				navbutton: "linear-gradient(to right, #41BD7526, #41BD7580)",
+				button: "linear-gradient(135deg, #FFFFFF33, #FFFFFF66)",
+			},
+			boxShadow: {
+				button: "6px 6px 5.7px #00000040",
 			},
 			animation: {
 				openNavbar: "navbar 1s forwards",
