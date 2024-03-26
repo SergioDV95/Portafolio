@@ -18,6 +18,91 @@
    }
 }
 
-@layer components {}
+@layer components {
+   .card {
+      --card-height: 130px;
+      --card-width: 89px;
+      --card-radius: 37px;
+      --border-width: 16px;
+      --border-fill: 150px;
+      --border-height: 357px;
+  
+      --card-color: #000000;
+  
+      position: relative;
+      height: var(--card-height);
+      width: var(--card-width);
+      background: var(--card-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      z-index: 1;
+      border-radius: var(--card-radius);
+  }
+  
+  .card::before {
+      content: "";
+      height: var(--border-height);
+      width: var(--border-fill);
+      background: linear-gradient(90deg, red, blue);
+      position: absolute;
+      z-index: 2;
+      animation: rotate 3.5s linear infinite;
+  }
+  
+  @keyframes rotate {
+      from {
+          transform: rotateZ(1deg);
+      }
+  
+      to {
+          transform: rotateZ(360deg);
+      }
+  }
+  
+  .card::after {
+      content: "";
+      height: calc(var(--card-height) - var(--border-width));
+      width: calc(var(--card-width) - var(--border-width));
+      background: var(--card-color);
+      position: absolute;
+      z-index: 2;
+      border-radius: var(--card-radius);
+  }
+  
+  .card-content {
+      z-index: 3;
+      font-size: 16px;
+      font-family: system-ui;
+      font-weight: bold;
+      color: white;
+      position: absolute;
+  }
+}
 
-@layer utilities {}
+@layer utilities {
+   .button {
+      position: relative;
+      padding: 10px 20px;
+      color: white;
+      background: #333;
+      border-radius: 10px;
+      overflow: hidden;
+   }
+   
+   .button::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: calc(100% + 8px);
+      height: calc(100% + 8px);
+      background: linear-gradient(45deg, transparent, #999, transparent);
+      background-size: 50px 100%;
+      background-repeat: no-repeat;
+      animation: glow 2s infinite linear;
+      border-radius: 10px;
+      z-index: 2;
+   }
+}
