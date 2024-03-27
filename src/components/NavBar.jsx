@@ -108,7 +108,7 @@ export default function NavBar() {
       ));
    };
    return (
-      <div className="flex max-lg:justify-end justify-between text-end gap-[30px] w-full max-lg:p-[5%] lg:px-[5%] lg:mt-[4%] relative">
+      <header className="flex max-lg:justify-end justify-between text-end gap-[30px] w-full max-lg:p-[5%] lg:px-[5%] lg:mt-[4%] relative">
          <motion.nav 
             layout
             className={`flex max-lg:z-50 max-lg:flex-col rounded-[8px] max-lg:gap-[2%] p-[1.5%] lg:items-center lg:justify-between font-semibold bg-navbarMobile lg:bg-navbarDesktop border-[2px] border-[#E2E2E2] box-border`}
@@ -170,14 +170,16 @@ export default function NavBar() {
          </motion.nav>
          <motion.button 
             layout
-            className="border-[2px] h-[50px] lg:h-[60px] lg:w-[15%] px-[20px] border-[#FFBE00] bg-navbutton rounded-[8px] font-semibold" 
+            className="card font-semibold appearance-none" 
             whileTap={{ scale: 0.9 }} 
             whileHover={{ scale: 1.1 }} 
             title="Contacto" 
             type="button"
          >
-            {lang === "es" ? "CONTÁCTAME" : "CONTACT ME"}
+            <h4 className="font-dela absolute bg-[#16BAC5] z-10">
+               {lang === "es" ? "CONTÁCTAME" : "CONTACT ME"}
+            </h4>
          </motion.button>
-      </div>
+      </header>
    )
 }

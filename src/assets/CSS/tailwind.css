@@ -20,14 +20,14 @@
 
 @layer components {
    .card {
-      --card-height: 130px;
-      --card-width: 89px;
-      --card-radius: 37px;
-      --border-width: 16px;
+      --card-height: 63px;
+      --card-width: 180px;
+      --card-radius: 8px;
+      --border-width: 4px;
       --border-fill: 150px;
       --border-height: 357px;
   
-      --card-color: #000000;
+      --card-color: #16BAC5;
   
       position: relative;
       height: var(--card-height);
@@ -41,44 +41,43 @@
       border-radius: var(--card-radius);
   }
   
-  .card::before {
+   .card::before {
       content: "";
-      height: var(--border-height);
-      width: var(--border-fill);
-      background: linear-gradient(90deg, red, blue);
+      height: calc(var(--border-height));
+      width: calc(var(--border-fill) + (var(--border-fill)));
+      background: linear-gradient(90deg, transparent 40%, #FFFFFF, transparent 60%);
       position: absolute;
       z-index: 2;
       animation: rotate 3.5s linear infinite;
-  }
-  
-  @keyframes rotate {
-      from {
-          transform: rotateZ(1deg);
-      }
-  
-      to {
-          transform: rotateZ(360deg);
-      }
-  }
-  
-  .card::after {
+   }
+   
+   .card::after {
       content: "";
       height: calc(var(--card-height) - var(--border-width));
       width: calc(var(--card-width) - var(--border-width));
-      background: var(--card-color);
+      background: #16BAC5;
       position: absolute;
       z-index: 2;
-      border-radius: var(--card-radius);
-  }
-  
-  .card-content {
+      border-radius: calc(var(--card-radius) - (var(--card-radius) / 6));
+   }
+   
+   .card-content {
       z-index: 3;
       font-size: 16px;
       font-family: system-ui;
       font-weight: bold;
       color: white;
       position: absolute;
-  }
+   }
+
+   @keyframes rotate {
+      from {
+         transform: rotateZ(1deg);
+      }
+      to {
+         transform: rotateZ(360deg);
+      }
+   }
 }
 
 @layer utilities {
@@ -105,4 +104,10 @@
       border-radius: 10px;
       z-index: 2;
    }
+   
+   .picture-container {
+      position: relative;
+      background-image: linear-gradient(to bottom, #FFFFFF66, #FFFFFF33 60%);
+   }
+
 }

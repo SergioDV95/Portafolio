@@ -13,6 +13,7 @@ export default {
 				navbarMobile: "linear-gradient(to right, #42506B 40%, #42506BE6)",
 				navbutton: "linear-gradient(to right, #41BD7526, #41BD7580)",
 				button: "linear-gradient(135deg, #FFFFFF33, #FFFFFF66)",
+				picture: "linear-gradient(to bottom, #FFFFFF66, #FFFFFF33 60%)",
 			},
 			boxShadow: {
 				button: "6px 6px 5.7px #00000040",
