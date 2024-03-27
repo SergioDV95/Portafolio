@@ -6,6 +6,7 @@ export default function Home() {
    const { lang } = useContext(Language);
    const [text, setText] = useState({
       aboutMe: [],
+      languages: ["TypeScript", "JAVA", "CSS", "PHP", "SQL", "JavaScript", "HTML", "Python"],
    });
 
    const textSelector = () => {
@@ -16,6 +17,13 @@ export default function Home() {
       ));
    }
 
+   console.log(text.languages);
+
+   const renderSkills = skills => {
+      if(!skills || skills.length === 0) return;
+      return skills.map((skill, index) => <p key={index + skill} className="p-[5px] bg-[#3E619B] rounded-[5px] text-center">{skill}</p>);
+   }
+
    useEffect(() => {
       if (lang === "es") {
          const aboutMe = [
@@ -23,14 +31,14 @@ export default function Home() {
             "Me apasiona el aprendizaje continuo y la mejora de mis habilidades técnicas y creativas. Tengo capacidad para trabajar en equipo, resolver problemas y adaptarme a diferentes requisitos y tecnologías.",
             "Mi objetivo es crear soluciones web innovadoras y de calidad que satisfagan las necesidades de los usuarios y los clientes.",
          ]
-         setText({ aboutMe: aboutMe});
+         setText((text) => ({...text, aboutMe: aboutMe}));
       } else {
          const aboutMe = [
             "Full Stack Jr. Web Developer, I have experience in developing dynamic and responsive web applications.",
             "I am passionate about continuous learning and improving my technical and creative skills. I have the ability to work in a team, solve problems and adapt to different requirements and technologies.",
             "My goal is to create innovative and quality web solutions that meet the needs of users and clients.",
          ]
-         setText({ aboutMe: aboutMe});
+         setText((text) => ({...text, aboutMe: aboutMe}));
       }
    }, [lang]);
 
@@ -77,17 +85,29 @@ export default function Home() {
                {lang === "es" ? "SOBRE MÍ" : "ABOUT ME"}
             </h1>
             <div className="bg-[#FFBE00] w-[15%] h-[2px] rounded-full"></div>
-            <div className="text-center leading-[22px] px-[5%] ">
+            <div className="text-center leading-[22px] px-[5%]">
                {textSelector()}
             </div>
          </div>
-         <div className="flex relative max-lg:flex-col gap-[30px] max-lg:items-center">
-            <img className="absolute -left-[45%] scale-[0.45] -top-[8%] " src="./src/assets/png/dark/flechas_der.png" alt="Right arrows"/>
-            <h1 className="font-dela max-lg:text-center text-[24px] text-[#FFBE00]">
-               {lang === "es" ? "HABILIDADES" : "SKILLS"}
-            </h1>
-            <div className="bg-[#FFBE00] w-[15%] h-[2px] rounded-full"></div>
-            <div></div>
+         <div className="flex relative max-lg:flex-col gap-[30px] max-lg:items-center px-[5%]">
+            <figure className="relative flex justify-center items-center">
+               <img className={`absolute ${lang === "es" ? "-left-[50%] w-[50%]" : "-left-[100%]"} `} src="./src/assets/png/dark/flechas_der.png" alt="Right arrows"/>
+               <h1 className="font-dela max-lg:text-center text-[24px] text-[#FFBE00]">
+                  {lang === "es" ? "HABILIDADES" : "SKILLS"}
+               </h1>
+            </figure>
+            <div className="bg-[#FFBE00] w-[20%] h-[2px] rounded-full"></div>
+            <div className="bg-skills h-[150px] border-[2px] border-slate-600 grid grid-cols-[2fr_1fr] p-5 rounded-[8px] w-full">
+               <div className="flex flex-col">
+                  <h3>{lang === "es" ? "Lenguajes:" : "Languages:"}</h3>
+                  <div className="flex flex-wrap">
+                     {renderSkills(text.languages)}
+                  </div>
+               </div>
+               <div className="">
+                  <img src="" alt="" />
+               </div>
+            </div>
          </div>
       </section>
    )

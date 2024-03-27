@@ -14,6 +14,7 @@ export default {
 				navbutton: "linear-gradient(to right, #41BD7526, #41BD7580)",
 				button: "linear-gradient(135deg, #FFFFFF33, #FFFFFF66)",
 				picture: "linear-gradient(to bottom, #FFFFFF66, #FFFFFF33 60%)",
+				skills: "linear-gradient(to right, #FFFFFF33, #FFFFFF66)",
 			},
 			boxShadow: {
 				button: "6px 6px 5.7px #00000040",

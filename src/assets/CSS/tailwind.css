@@ -104,10 +104,4 @@
       border-radius: 10px;
       z-index: 2;
    }
-   
-   .picture-container {
-      position: relative;
-      background-image: linear-gradient(to bottom, #FFFFFF66, #FFFFFF33 60%);
-   }
-
 }
