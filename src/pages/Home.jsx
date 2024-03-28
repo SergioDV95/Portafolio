@@ -7,7 +7,11 @@ export default function Home() {
    const { lang } = useContext(Language);
    const [text, setText] = useState({
       aboutMe: [],
-      languages: ["TypeScript", "JAVA", "CSS", "PHP", "SQL", "JavaScript", "HTML", "Python"],
+      skills: {
+         languages: ["TypeScript", "JAVA", "CSS", "PHP", "SQL", "JavaScript", "HTML", "Python"],
+         frameworks: ["Node.js", "Express.js", "Tailwindcss"],
+         dB: ["MySQL", "MongoDB"],
+      },
    });
 
    const textSelector = () => {
@@ -32,7 +36,7 @@ export default function Home() {
          } else {
             selectedColors.push("bg-[#FFBE00]");
          }
-         return <p key={index + skill} className={`${selectedColors[index]} p-[5px] rounded-[5px] text-center`}>{skill}</p>
+         return <p key={index + skill} className={`${selectedColors[index]} text-[12px] p-[5px] rounded-[5px] text-center`}>{skill}</p>
       });
    }
 
@@ -109,17 +113,16 @@ export default function Home() {
                </h1>
             </figure>
             <div className="bg-[#FFBE00] w-[20%] h-[2px] rounded-full"></div>
-            <div className="bg-skills h-fit border-[2px] border-slate-600 grid grid-cols-[3fr_1fr] p-5 rounded-[8px] w-full">
+            <div className="bg-skills h-fit border-[2px] border-slate-600 grid grid-cols-[2fr_1fr] gap-x-[10px] p-[10px] rounded-[8px] w-full box-border">
                <div className="flex flex-col">
                   <h3>{lang === "es" ? "Lenguajes:" : "Languages:"}</h3>
                   <div className="flex flex-wrap gap-[5px] ">
-                     {renderSkills(text.languages)}
+                     {renderSkills(text.skills.languages)}
                   </div>
                </div>
                <div className="flex flex-col justify-center items-center">
-                  <div className="bg-picture p-[10%]">
-                     <img className="w-full h-full" src={DiscSVG} alt="Discord" />
-                     <object data="./src/assets/SVG/DISCORD.svg" type="image/svg+xml"></object>
+                  <div className="bg-picture p-[20%] shadow-button w-fit h-fit rounded-[8px] ">
+                     <object className="w-full h-full scale-[1.2] " data="./src/assets/SVG/LENGUAJES.svg" type="image/svg+xml"></object>
                   </div>
                </div>
             </div>
