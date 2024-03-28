@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { Language } from "../components/createContext"
 import { motion } from "framer-motion"
+import DiscSVG from '../assets/SVG/DISCORD.svg';
 
 export default function Home() {
    const { lang } = useContext(Language);
@@ -17,11 +18,22 @@ export default function Home() {
       ));
    }
 
-   console.log(text.languages);
-
    const renderSkills = skills => {
       if(!skills || skills.length === 0) return;
-      return skills.map((skill, index) => <p key={index + skill} className="p-[5px] bg-[#3E619B] rounded-[5px] text-center">{skill}</p>);
+      const selectedColors = [];
+      return skills.map((skill, index) => {
+         const number = Math.random();
+         if (number < 0.33 && selectedColors[selectedColors.length - 1] !== "bg-[#3E619B]") {
+            selectedColors.push("bg-[#3E619B]");
+         } else if (number < 0.66 && selectedColors[selectedColors.length - 1] !== "bg-[#EA4B4C]") {
+            selectedColors.push("bg-[#EA4B4C]");
+         } else if (selectedColors[selectedColors.length - 1] !== "bg-[#42506B]") {
+            selectedColors.push("bg-[#42506B]");
+         } else {
+            selectedColors.push("bg-[#FFBE00]");
+         }
+         return <p key={index + skill} className={`${selectedColors[index]} p-[5px] rounded-[5px] text-center`}>{skill}</p>
+      });
    }
 
    useEffect(() => {
@@ -97,15 +109,18 @@ export default function Home() {
                </h1>
             </figure>
             <div className="bg-[#FFBE00] w-[20%] h-[2px] rounded-full"></div>
-            <div className="bg-skills h-[150px] border-[2px] border-slate-600 grid grid-cols-[2fr_1fr] p-5 rounded-[8px] w-full">
+            <div className="bg-skills h-fit border-[2px] border-slate-600 grid grid-cols-[3fr_1fr] p-5 rounded-[8px] w-full">
                <div className="flex flex-col">
                   <h3>{lang === "es" ? "Lenguajes:" : "Languages:"}</h3>
-                  <div className="flex flex-wrap">
+                  <div className="flex flex-wrap gap-[5px] ">
                      {renderSkills(text.languages)}
                   </div>
                </div>
-               <div className="">
-                  <img src="" alt="" />
+               <div className="flex flex-col justify-center items-center">
+                  <div className="bg-picture p-[10%]">
+                     <img className="w-full h-full" src={DiscSVG} alt="Discord" />
+                     <object data="./src/assets/SVG/DISCORD.svg" type="image/svg+xml"></object>
+                  </div>
                </div>
             </div>
          </div>
